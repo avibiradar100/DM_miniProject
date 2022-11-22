@@ -88,14 +88,14 @@ qualified = qualified.sort_values('wr', ascending=False).head(20)
 st.subheader("Top 10 Popular Products")
 st.write(qualified.head(10))
 
-from matplotlib import cm
-color = cm.inferno_r(np.linspace(.4, .8, 30))
 
-rating_plot_count = qualified['ratings_count'].plot.bar(figsize=(12, 4),color=color)
-rating_plot_count.set_title("Rating Count Bar-Plot")
-rating_plot_count.set_xlabel("productId")
-rating_plot_count.set_ylabel("Count")
-# ax.hist(data)
-st.pyplot(rating_plot_count)
+rating_plot_count = qualified['ratings_count'].value_counts()
+fig = plt.figure(figsize=(12,4))
+sns.barplot(rating_plot_count.index, rating_plot_count.values, alpha=0.8)
+fig.title('Rating Count Bar-Plot')
+fig.ylabel('Count', fontsize=12)
+fig.xlabel('productId', fontsize=12)
 
+# Add figure in streamlit app
+st.pyplot(fig)
 
