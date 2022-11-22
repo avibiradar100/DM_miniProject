@@ -31,7 +31,7 @@ st.write("Total number of ratings :",df.rating.nunique())
 st.write("Total number of users   :", df.userId.nunique())
 st.write("Total number of products  :", df.productId.nunique())
 
-st.subheader("rating describe summary ")
+st.subheader("ratings summary ")
 df.describe()['rating']
 
 # Average rating of products
@@ -40,3 +40,16 @@ ratings = pd.DataFrame(df.groupby('productId')['rating'].mean())
 ratings['ratings_count'] = pd.DataFrame(df.groupby('productId')['rating'].count())
 ratings['ratings_average'] = pd.DataFrame(df.groupby('productId')['rating'].mean())
 st.write(ratings.head(10))
+
+#histogram
+ratings['rating'].hist(bins=70)
+st.text(" ")
+data=ratings['rating'].to_list()
+plt.rcParams['figure.figsize'] = [10, 4]
+st.write("Histogram")
+fig, ax = plt.subplots()
+plt.locator_params(nbins = 70)
+plt.xlabel('rating')
+plt.ylabel("rating_count")
+ax.hist(data)
+st.pyplot(fig)
