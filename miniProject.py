@@ -72,4 +72,4 @@ qualified = ratings[(ratings['ratings_count'] >= m) & (ratings['ratings_count'].
 
 qualified['ratings_count'] = qualified['ratings_count'].astype('int')
 qualified['ratings_average'] = qualified['ratings_average'].astype('int')
-st.write(qualified.head().sort_values(by='ratings_count', ascending=False))
+st.write(qualified.sort_values(by='ratings_count', ascending=False))
