@@ -42,7 +42,6 @@ ratings['ratings_average'] = pd.DataFrame(df.groupby('productId')['rating'].mean
 st.write(ratings.head(10))
 
 #histogram
-st.write("histogram")
 ratings['rating'].hist(bins=70)
 st.text(" ")
 data=ratings['rating'].to_list()
