@@ -48,7 +48,7 @@ data=ratings['rating'].to_list()
 plt.rcParams['figure.figsize'] = [10, 4]
 st.write("Histogram")
 fig, ax = plt.subplots()
-plt.locator_params(nbins = 70)
+plt.locator_params(nbins = 10)
 plt.xlabel('rating')
 plt.ylabel("rating_count")
 ax.hist(data)
