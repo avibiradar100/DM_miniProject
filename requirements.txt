@@ -1,6 +1,6 @@
 surprise
-sklearn
 seaborn
 pandas
 matplotlib
+scikit-learn
 streamlit
