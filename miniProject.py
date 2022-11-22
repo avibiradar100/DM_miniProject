@@ -17,7 +17,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
     for filename in filenames:
         print(os.path.join(dirname, filename))
 
-df = pd.read_csv('Electronics_data')
+df = pd.read_csv('Electronics_data.csv')
 
 st.write(pd.DataFrame(df))
 
