@@ -91,6 +91,6 @@ st.write(qualified.head(10))
 
 st.subheader("User-item Matrix")
 # Matrix with row per 'user' and column per 'item' 
-pivot_df = df.pivot(index = 'userId', columns ='productId', values = 'ratings').fillna(0)
+pivot_df = df.pivot(index = 'userId', columns ='productId', values = 'rating').fillna(0)
 pivot_df.head()
 
