@@ -64,3 +64,8 @@ vote_counts = ratings[ratings['ratings_count'].notnull()]['ratings_count'].astyp
 vote_averages = ratings[ratings['ratings_average'].notnull()]['ratings_average'].astype('int')
 C = vote_averages.mean()
 st.write("Average rating of product across the whole dataset is i.e C = ",C)
+
+m = vote_counts.quantile(0.95)
+st.write("Minimum votes required to be listed in the chart is",m)
+
+st.write(ratings.head())
