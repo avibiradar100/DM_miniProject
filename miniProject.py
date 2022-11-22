@@ -59,3 +59,8 @@ st.write(" ")
 st.subheader("Most Popular product by using weighted rating method")
 st.subheader("WR = (v ÷ (v+m)) × R + (m ÷ (v+m))× C")
 st.text("\n\nR is the average rating for the item.\nv is the number of votes for the item.\nm is the minimum votes required to be listed in the popular items(defined by > percentile 80 of total votes).\nC is the average rating across the whole dataset.")
+
+vote_counts = ratings[ratings['ratings_count'].notnull()]['ratings_count'].astype('int')
+vote_averages = ratings[ratings['ratings_average'].notnull()]['ratings_average'].astype('int')
+C = vote_averages.mean()
+st.write("Average rating of product across the whole dataset is",C)
