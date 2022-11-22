@@ -54,10 +54,5 @@ plt.ylabel("rating_count")
 ax.hist(data)
 st.pyplot(fig)
 
-# Most top n products
-st.subheader("Most Top n Products")
-n=st.number_input("Enter value for n",20)
-popular_products = pd.DataFrame(df.groupby('productId')['rating'].count())
-most_popular = popular_products.sort_values('rating', ascending=False)
-# most_popular.head(n).plot(kind = "bar",figsize=(12, 4))
-st.bar_chart(data=most_popular.head(n),x=popular_products, y=most_popular, width=12, height=4)
+st.subheader("Most Popular product")
+st.write("WR = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C R is the average rating for the item.v is the number of votes for the item.m is the minimum votes required to be listed in the popular items(defined by > percentile 80 of total votes)C is the average rating across the whole dataset.")
