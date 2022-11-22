@@ -90,7 +90,6 @@ st.write(qualified.head(10))
 
 plt.rcParams['figure.figsize'] = [10, 4]
 fig, ax = plt.subplots()
-plt.locator_params(nbins = 10)
 plt.xlabel('productId')
 plt.ylabel("rating_count")
 ax.hist(data)
