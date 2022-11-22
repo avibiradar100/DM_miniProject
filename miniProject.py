@@ -19,7 +19,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 
 df = pd.read_csv('Electronics_data.csv')
 
-st.header("Mini Project : Data Analysis of Amazon Reviews")
+st.header("Data Analysis of Amazon Reviews")
 st.write("")
 
 st.write(pd.DataFrame(df.head(20)))
