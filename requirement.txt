@@ -1,6 +1,5 @@
 surprise
 sklearn
 seaborn
-matplotlib
 pandas
 streamlit

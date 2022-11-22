@@ -20,3 +20,6 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 df = pd.read_csv("/kaggle/input/amazon-product-reviews/ratings_Electronics (1).csv",names=['userId', 'productId','rating','timestamp'])
 
 st.write(pd.DataFrame(df))
+
+st.write("Total Reviews:",df.shape[0])
+st.write("Total Columns:",df.shape[1])
