@@ -54,6 +54,6 @@ plt.ylabel("rating_count")
 ax.hist(data)
 st.pyplot(fig)
 
-st.subheader("Most Popular product")
+st.subheader("Most Popular product by using weighted rating method")
 st.subheader("WR = (v ÷ (v+m)) × R + (m ÷ (v+m))× C")
-st.text("\n\nR is the average rating for the item.\nv is the number of votes for the item.m is the minimum votes required to be listed in the popular items(defined by > percentile 80 of total votes).\nC is the average rating across the whole dataset.")
+st.text("\n\nR is the average rating for the item.\nv is the number of votes for the item.\nm is the minimum votes required to be listed in the popular items(defined by > percentile 80 of total votes).\nC is the average rating across the whole dataset.")
