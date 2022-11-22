@@ -33,3 +33,10 @@ st.write("Total number of products  :", df.productId.nunique())
 
 st.subheader("rating describe summary ")
 df.describe()['rating']
+
+# Average rating of products
+st.subheader("Average rating of products")
+ratings = pd.DataFrame(df.groupby('productId')['rating'].mean())
+ratings['ratings_count'] = pd.DataFrame(df.groupby('productId')['rating'].count())
+ratings['ratings_average'] = pd.DataFrame(df.groupby('productId')['rating'].mean())
+st.write(ratings.head(10))
