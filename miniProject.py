@@ -19,7 +19,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 
 df = pd.read_csv('Electronics_data.csv')
 
-st.write(pd.DataFrame(df.head()))
+st.text(pd.DataFrame(df.head(20)))
 
 st.write("Total Reviews:",df.shape[0])
 st.write("Total Columns:",df.shape[1])
