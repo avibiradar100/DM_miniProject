@@ -92,6 +92,6 @@ plt.rcParams['figure.figsize'] = [10, 4]
 fig, ax = plt.subplots()
 plt.xlabel('productId')
 plt.ylabel("rating_count")
-ax.hist(data)
+ax.hist(qualified.head(10))
 st.pyplot(fig)
 
