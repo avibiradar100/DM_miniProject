@@ -22,10 +22,14 @@ df = pd.read_csv('Electronics_data.csv')
 st.header("Data Analysis of Amazon Reviews")
 st.write("")
 
+st.subheader("Dataset:")
 st.write(pd.DataFrame(df.head(20)))
 
 st.write("Total Reviews:",df.shape[0])
 st.write("Total Columns:",df.shape[1])
+st.write("Total number of ratings :",df.rating.nunique())
+st.write("Total number of users   :", df.userId.nunique())
+st.write("Total number of products  :", df.productId.nunique())
 
 # Taking subset of the dataset
 df = df.iloc[:5000,0:]
