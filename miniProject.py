@@ -53,3 +53,10 @@ plt.xlabel('rating')
 plt.ylabel("rating_count")
 ax.hist(data)
 st.pyplot(fig)
+
+# Most top n products
+n=st.number_input("Enter value for n",20)
+popular_products = pd.DataFrame(df.groupby('productId')['rating'].count())
+most_popular = popular_products.sort_values('rating', ascending=False)
+most_popular.head(n).plot(kind = "bar",figsize=(12, 4))
+st.pyplot(most_popular)
