@@ -66,6 +66,10 @@ C = vote_averages.mean()
 st.write("Average rating of product across the whole dataset is i.e C = ",C)
 
 m = vote_counts.quantile(0.95)
-st.write("Minimum votes required to be listed in the chart is",m)
+st.write("Minimum votes required to be listed in the chart is i.e m = ",m)
 
-st.write(ratings.head())
+qualified = ratings[(ratings['ratings_count'] >= m) & (ratings['ratings_count'].notnull()) & (ratings['ratings_average'].notnull())][['ratings_count', 'ratings_average']]
+
+qualified['ratings_count'] = qualified['ratings_count'].astype('int')
+qualified['ratings_average'] = qualified['ratings_average'].astype('int')
+st.write(qualified.head().sort_values(by='ratings_count', ascending=False))
