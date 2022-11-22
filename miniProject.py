@@ -55,4 +55,4 @@ ax.hist(data)
 st.pyplot(fig)
 
 st.subheader("Most Popular product")
-st.text("WR = (v ÷ (v+m)) × R + (m ÷ (v+m))\n\n\n × C R is the average rating for the item.\nv is the number of votes for the item.m is the minimum votes required to be listed in the popular items(defined by > percentile 80 of total votes).\nC is the average rating across the whole dataset.")
+st.text("WR = (v ÷ (v+m)) × R + (m ÷ (v+m))× C \n\nR is the average rating for the item.\nv is the number of votes for the item.m is the minimum votes required to be listed in the popular items(defined by > percentile 80 of total votes).\nC is the average rating across the whole dataset.")
