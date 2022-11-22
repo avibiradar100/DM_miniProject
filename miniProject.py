@@ -63,4 +63,4 @@ st.text("\n\nR is the average rating for the item.\nv is the number of votes for
 vote_counts = ratings[ratings['ratings_count'].notnull()]['ratings_count'].astype('int')
 vote_averages = ratings[ratings['ratings_average'].notnull()]['ratings_average'].astype('int')
 C = vote_averages.mean()
-st.write("Average rating of product across the whole dataset is",C)
+st.write("Average rating of product across the whole dataset is i.e C=",C)
