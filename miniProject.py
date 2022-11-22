@@ -91,7 +91,7 @@ st.write(qualified.head(10))
 
 rating_plot_count = qualified['ratings_count'].value_counts()
 fig = plt.figure(figsize=(12,4))
-sns.barplot(rating_plot_count.values)
+sns.bar_chart(rating_plot_count.values)
 # fig.title('Rating Count Bar-Plot')
 fig.ylabel('Count', fontsize=12)
 fig.xlabel('productId', fontsize=12)
