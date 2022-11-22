@@ -31,7 +31,7 @@ st.write("Total number of ratings :",df.rating.nunique())
 st.write("Total number of users   :", df.userId.nunique())
 st.write("Total number of products  :", df.productId.nunique())
 
-st.subheader("ratings summary ")
+st.subheader("Ratings summary ")
 df.describe()['rating']
 
 # Average rating of products
