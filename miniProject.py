@@ -32,7 +32,7 @@ st.write("Total number of users   :", df.userId.nunique())
 st.write("Total number of products  :", df.productId.nunique())
 
 st.subheader("Ratings summary ")
-df.describe()['rating'].transpose()
+df.describe()['rating']
 
 # Average rating of products
 st.subheader("Average rating of products")
@@ -56,7 +56,7 @@ st.pyplot(fig)
 
 st.write(" ")
 st.write(" ")
-st.subheader("Most Popular product by using weighted rating method")
+st.subheader("Most Popular products by using weighted rating method")
 st.subheader("WR = (v ÷ (v+m)) × R + (m ÷ (v+m))× C")
 st.text("\n\nR is the average rating for the item.\nv is the number of votes for the item.\nm is the minimum votes required to be listed in the popular items(defined by > percentile 80 of total votes).\nC is the average rating across the whole dataset.")
 
@@ -87,4 +87,10 @@ qualified = qualified.sort_values('wr', ascending=False).head(20)
 
 st.subheader("Top 10 Popular Products")
 st.write(qualified.head(10))
+
+
+st.subheader("User-item Matrix")
+# Matrix with row per 'user' and column per 'item' 
+pivot_df = df.pivot(index = 'userId', columns ='productId', values = 'ratings').fillna(0)
+pivot_df.head()
 
