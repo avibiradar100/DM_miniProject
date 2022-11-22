@@ -87,15 +87,13 @@ qualified = qualified.sort_values('wr', ascending=False).head(20)
 
 st.subheader("Top 10 Popular Products")
 st.write(qualified.head(10))
+st.write(qualified[0])
 
-
-rating_plot_count = qualified['ratings_count'].value_counts()
-fig = plt.figure(figsize=(12,4))
-st.plotly_chart(rating_plot_count.values)
-# fig.title('Rating Count Bar-Plot')
-fig.ylabel('Count', fontsize=12)
-fig.xlabel('productId', fontsize=12)
-
-# Add figure in streamlit app
+plt.rcParams['figure.figsize'] = [10, 4]
+fig, ax = plt.subplots()
+plt.locator_params(nbins = 10)
+plt.xlabel('')
+plt.ylabel("rating_count")
+ax.hist(data)
 st.pyplot(fig)
 
