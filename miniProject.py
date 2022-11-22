@@ -23,3 +23,9 @@ st.write(pd.DataFrame(df))
 
 st.write("Total Reviews:",df.shape[0])
 st.write("Total Columns:",df.shape[1])
+
+# Taking subset of the dataset
+df = df.iloc[:5000,0:]
+
+print("Total Reviews:",df.shape[0])
+print("Total Columns:",df.shape[1])
