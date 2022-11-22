@@ -31,11 +31,5 @@ st.write("Total number of ratings :",df.rating.nunique())
 st.write("Total number of users   :", df.userId.nunique())
 st.write("Total number of products  :", df.productId.nunique())
 
-# Taking subset of the dataset
-df = df.iloc[:5000,0:]
-
-print("Total Reviews:",df.shape[0])
-print("Total Columns:",df.shape[1])
-
 st.subheader("rating describe summary ")
 df.describe()['rating']
