@@ -87,12 +87,11 @@ qualified = qualified.sort_values('wr', ascending=False).head(20)
 
 st.subheader("Top 10 Popular Products")
 st.write(qualified.head(10))
-st.write(qualified[0])
 
 plt.rcParams['figure.figsize'] = [10, 4]
 fig, ax = plt.subplots()
 plt.locator_params(nbins = 10)
-plt.xlabel('')
+plt.xlabel('productId')
 plt.ylabel("rating_count")
 ax.hist(data)
 st.pyplot(fig)
