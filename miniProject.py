@@ -4,6 +4,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+from scipy.sparse.linalg import svds
 sns.set_style('white')
 
 # Split
@@ -93,4 +94,10 @@ st.subheader("User-item Matrix")
 # Matrix with row per 'user' and column per 'item' 
 pivot_df = df.pivot(index = 'userId', columns ='productId', values = 'rating').fillna(0)
 st.write(pivot_df.head(5).transpose())
+
+# Singular Value Decomposition
+st.subheader("Singular Value Decomposition")
+U, sigma, Vt = svds(pivot_df, k = 10)
+
+st.write('Left singular matrix: \n',U)
 
