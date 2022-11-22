@@ -74,5 +74,16 @@ qualified['ratings_count'] = qualified['ratings_count'].astype('int')
 qualified['ratings_average'] = qualified['ratings_average'].astype('int')
 st.write(qualified.sort_values(by='ratings_count', ascending=False))
 
-st.subheader("No of items qualified")
-st.write(qualified.shape)
+st.write("No of items qualified",qualified.shape)
+
+def weighted_rating(x):
+    v = x['ratings_count']
+    R = x['ratings_average']
+    return (v/(v+m) * R) + (m/(m+v) * C)
+
+qualified['wr'] = qualified.apply(weighted_rating, axis=1)
+
+qualified = qualified.sort_values('wr', ascending=False).head(20)
+
+st.subheader("Top 10 Popular Products")
+st.write(qualified.head(10))
