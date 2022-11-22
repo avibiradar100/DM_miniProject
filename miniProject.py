@@ -32,7 +32,7 @@ st.write("Total number of users   :", df.userId.nunique())
 st.write("Total number of products  :", df.productId.nunique())
 
 st.subheader("Ratings summary ")
-df.describe()['rating']
+df.describe()['rating'].transpose()
 
 # Average rating of products
 st.subheader("Average rating of products")
