@@ -36,3 +36,6 @@ df = df.iloc[:5000,0:]
 
 print("Total Reviews:",df.shape[0])
 print("Total Columns:",df.shape[1])
+
+st.subheader("rating describe summary ")
+df.describe()['rating']
