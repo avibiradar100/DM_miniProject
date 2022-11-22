@@ -55,6 +55,7 @@ ax.hist(data)
 st.pyplot(fig)
 
 # Most top n products
+st.subheader("Most Top n Products")
 n=st.number_input("Enter value for n",20)
 popular_products = pd.DataFrame(df.groupby('productId')['rating'].count())
 most_popular = popular_products.sort_values('rating', ascending=False)
