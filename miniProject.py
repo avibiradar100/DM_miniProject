@@ -18,7 +18,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
         print(os.path.join(dirname, filename))
 
 df = pd.read_csv('Electronics_data.csv')
-
+df.drop['timestamps']
 st.title("Data Analytics for Amazon Reviews")
 st.write("")
 
