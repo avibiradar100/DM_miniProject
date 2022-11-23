@@ -18,7 +18,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
         print(os.path.join(dirname, filename))
 
 df = pd.read_csv('Electronics_data.csv')
-df.drop['timestamps']
+
 st.title("Data Analytics for Amazon Reviews")
 st.write("")
 
@@ -39,7 +39,7 @@ st.subheader("Average rating of products")
 ratings = pd.DataFrame(df.groupby('productId')['rating'].mean())
 ratings['ratings_count'] = pd.DataFrame(df.groupby('productId')['rating'].count())
 ratings['ratings_average'] = pd.DataFrame(df.groupby('productId')['rating'].mean())
-st.write(ratings.head(10)).drop('timestamp')
+st.write(ratings.head(10))
 
 #histogram
 ratings['rating'].hist(bins=70)
