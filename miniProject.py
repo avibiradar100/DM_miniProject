@@ -39,7 +39,7 @@ st.subheader("Average rating of products")
 ratings = pd.DataFrame(df.groupby('productId')['rating'].mean())
 ratings['ratings_count'] = pd.DataFrame(df.groupby('productId')['rating'].count())
 ratings['ratings_average'] = pd.DataFrame(df.groupby('productId')['rating'].mean())
-st.write(ratings.head(10))
+st.write(ratings.head(10)).drop('timestamp')
 
 #histogram
 ratings['rating'].hist(bins=70)
